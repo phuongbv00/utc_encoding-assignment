@@ -21,6 +21,11 @@ public class XxEncoder extends Encoder {
         return IntStream.range(0, n).boxed().collect(Collectors.toMap(i -> i, encodingMatrix::get));
     }
 
+    @Override
+    String getEmptyDataSymbol() {
+        return "+";
+    }
+
     public static void main(String[] args) {
         System.out.println("KQ: " + new XxEncoder().encode("Thi"));
     }
